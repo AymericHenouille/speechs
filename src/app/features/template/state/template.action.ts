@@ -1,4 +1,5 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
+import { ReadResponse } from '../models/read.model';
 import { CreateTemplate, Template } from '../models/template.model';
 
 export const templateActions = createActionGroup({
@@ -13,7 +14,7 @@ export const templateActions = createActionGroup({
     'Create Template Failure': props<{ error: string }>(),
 
     'Read Templates': emptyProps(),
-    'Read Templates Success': props<{ templates: Template[] }>(),
+    'Read Templates Success': props<{ templates: ReadResponse<Template[]> }>(),
     'Read Templates Failure': props<{ error: string }>(),
 
     'Update Template': props<{ templates: Template[] }>(),
